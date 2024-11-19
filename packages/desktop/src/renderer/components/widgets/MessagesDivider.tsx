@@ -3,6 +3,7 @@ import React from 'react'
 import { styled } from '@mui/material/styles'
 
 import { Grid, Typography } from '@mui/material'
+import zIndex from '@mui/material/styles/zIndex'
 
 const PREFIX = 'MessagesDivider'
 
@@ -15,6 +16,9 @@ const classes = {
 const StyledGrid = styled(Grid)(({ theme }) => ({
   [`& .${classes.root}`]: {
     padding: 0,
+    position: 'sticky',
+    top: '0rem',
+    zIndex: 100,
   },
 
   [`& .${classes.divider}`]: {
@@ -34,7 +38,8 @@ interface MessagesDividerProps {
 
 export const MessagesDivider: React.FC<MessagesDividerProps> = ({ title }) => {
   return (
-    <StyledGrid container justifyContent='center' alignItems='center' position='sticky'>
+    // this works for styling but I'm not sure that its the best code practice
+    <StyledGrid container justifyContent='center' alignItems='center' position='sticky' top='0' zIndex='100'>
       <Grid item xs>
         <div className={classes.divider} />
       </Grid>
