@@ -8,8 +8,8 @@ const PREFIX = 'MessagesDivider'
 
 const classes = {
   root: `${PREFIX}root`,
-  divider: `${PREFIX}divider`,
-  titleDiv: `${PREFIX}titleDiv`,
+  divider: `${PREFIX}divider`, // this is the line pre and post
+  titleDiv: `${PREFIX}titleDiv`, // this is the date itself
 }
 
 const StyledGrid = styled(Grid)(({ theme }) => ({
@@ -34,7 +34,7 @@ interface MessagesDividerProps {
 
 export const MessagesDivider: React.FC<MessagesDividerProps> = ({ title }) => {
   return (
-    <StyledGrid container justifyContent='center' alignItems='center'>
+    <StyledGrid container justifyContent='center' alignItems='center' position='sticky'>
       <Grid item xs>
         <div className={classes.divider} />
       </Grid>
